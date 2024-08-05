@@ -45,3 +45,13 @@ const kittenThree = ` <li class="card">
             </p>
           </li>`;
 list.innerHTML = kittenOne + kittenTwo + kittenThree
+
+/*quitar la clase de collapsed de la section form*/
+const formSection = document.querySelector ('.js-new-form');
+//formSection.classList.remove('collapsed');
+ 
+// llamamos a + del header y a la sección con la constante element
+const element = document.querySelector ('.js-btn-add');
+element.addEventListener ("click", (event)=>{
+  formSection.classList.toggle('collapsed')
+});
