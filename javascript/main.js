@@ -55,3 +55,9 @@ const element = document.querySelector ('.js-btn-add');
 element.addEventListener ("click", (event)=>{
   formSection.classList.toggle('collapsed')
 });
+
+// Ocultar la section form cuando hagamos click al botón cancel
+const buttonCancel = document.querySelector ('.js-btn-cancel');
+buttonCancel.addEventListener ('click', (event)=> {
+  formSection.classList.add ('collapsed')
+});
