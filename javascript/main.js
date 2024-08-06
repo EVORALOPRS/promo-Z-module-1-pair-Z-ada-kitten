@@ -55,3 +55,43 @@ const element = document.querySelector ('.js-btn-add');
 element.addEventListener ("click", (event)=>{
   formSection.classList.toggle('collapsed')
 });
+
+// esta acción es para ocultar el formulario cuando pulsemos en botón de cancelar
+const buttonSearch = document.querySelector ('.js_button-search');
+
+const description = document.querySelector ('.js_in_search_desc');
+
+buttonSearch.addEventListener ('click', (event)=>{
+event.preventDefault();
+const descriptiontext = description.value;
+console.log (descriptiontext);
+
+// al colocar lis.innerHTML = '' estamos diciendo que limpie la pág despues de darle click para que solo aparezcan los gatos selccionados
+list.innerHTML = ''
+
+if (kittenOne.includes(descriptiontext)) {
+  list.innerHTML = kittenOne
+  //Completa el código
+}
+// += es un acumulador si tenemos varios elementos en la lista.
+
+if (kittenTwo.includes(descriptiontext)) {
+  list.innerHTML += kittenTwo
+  //Completa el código
+}
+
+if (kittenThree.includes(descriptiontext)) {
+  list.innerHTML += kittenThree
+  //Completa el código
+}
+
+
+});
+
+
+
+  
+
+
+
+
