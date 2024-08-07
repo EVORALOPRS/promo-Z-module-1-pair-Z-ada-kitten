@@ -88,6 +88,34 @@ if (kittenThree.includes(descriptiontext)) {
 
 });
 
+/*En tu fichero main.js crea las variables necesarias para almacenar la información de cada gatito (recuerda que tenemos tres gatitos de momento):
+
+Una variable para la URL de la foto.
+
+Una variable para el nombre.
+
+Una variable para la descripción.
+
+Una variable para la raza.*/
+
+const imgKitten1 = 'https://dev.adalab.es/gato-siames.webp';
+const raceKitten1 = 'Siamés';
+const nameKitten1 = 'Anastasio';
+const descriptionKitten1 = 'Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.';
+
+const raceKitten2 = 'Sphynx';
+const imgKitten2 = 'https://dev.adalab.es/sphynx-gato.webp';
+const nameKitten2 = 'Fiona';
+const descriptionKitten2 = 'Produce fascinación y curiosidad. Exótico, raro, bello, extraño...hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.';
+
+const raceKitten3 = 'Maine Coon';
+const imgKitten3 = 'https://dev.adalab.es/maine-coon-cat.webp';
+const nameKitten3 = 'Cielo';
+const descriptionKitten3 = 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.';
+
+
+
+
 
 
   
