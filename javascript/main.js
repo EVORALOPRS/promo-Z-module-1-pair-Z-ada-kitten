@@ -95,7 +95,6 @@ if (kittenThree.includes(descriptiontext)) {
   //Completa el código
 }
 
-
 });
 
 /*En tu fichero main.js crea las variables necesarias para almacenar la información de cada gatito (recuerda que tenemos tres gatitos de momento):
