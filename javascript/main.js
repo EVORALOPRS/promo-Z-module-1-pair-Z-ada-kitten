@@ -108,9 +108,44 @@ Una variable para la descripción.
 
 Una variable para la raza.*/
 
+/*Interpola los variables creadas anteriormente en variable con el li de cada gatito.(el ejercicio esta al principio de js).
+
+  1. Crea dos funciones para mostrar u ocultar el formulario para añadir un nuevo gatito.
+
+  2. Declara una función llamada showNewCatForm para mostrar el formulario y otra llamada hideNewCatForm para ocultar el formulario, que se ejecutarán cuando demos clic en el botón "+" de la aplicación.
+
+  3. Piensa si estas funciones: ¿Necesitan recibir parámetros? ¿Devolverán algún valor?
+
+  4. Crea el código ya programado para mostrar y ocultar el formulario y muevelo dentro de las funciones.*/
+
+  // creamos  la funcion
+  function showNewCatForm( ){
+    //event.preventDefault();
+    formSection.classList.remove ('collapsed')
+    //console.log (hi)
+  }
+ 
+  function hideNewCatForm(){
+    formSection.classList.add ('collapsed')
+
+  }
+
+  element.addEventListener ('click', handleClickNewCatForm);
+  function handleClickNewCatForm(event){
+    event.preventDefault();
+    console.log (formSection.classList.contains ('collapsed'))
+
+    if(formSection.classList.contains ('collapsed')){
+      //llamamos o ejecutamos
+      showNewCatForm();
 
 
-//Interpola los variables creadas anteriormente en variable con el li de cada gatito.(el ejercicio esta al principio de js).
+    } else {
+      hideNewCatForm();
+    }
+      
+    }
+  
 
 
 
