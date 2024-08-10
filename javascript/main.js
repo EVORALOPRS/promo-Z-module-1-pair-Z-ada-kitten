@@ -62,9 +62,9 @@ const formSection = document.querySelector ('.js-new-form');
  
 // llamamos a + del header y a la sección con la constante element
 const element = document.querySelector ('.js-btn-add');
-element.addEventListener ("click", (event)=>{
+/*element.addEventListener ("click", (event)=>{
   formSection.classList.toggle('collapsed')
-});
+});*/
 
 // esta acción es para ocultar el formulario cuando pulsemos en botón de cancelar
 const buttonSearch = document.querySelector ('.js_button-search');
@@ -144,7 +144,47 @@ Una variable para la raza.*/
     }
       
     }
-  
+/*Añadir un gatito asociado al evento click y la lista de gatitos, para que aparezca con una funcion la tarjeta para poder crear un gatito.
+1- Crear clases en el botón, e input del formulario1
+2- Llamamos al botón y a los input
+3- Crear un evento sobre el botón añadir
+4- Crear una función asociado al botón.
+5- Sacar datos de lista
+*/ 
+
+const nameInput = document.querySelector ('.js-nameInput');const raceInput = document.querySelector ('.js-raceInput');const descInput = document.querySelector ('.js-descInput');const imgInput = document.querySelector ('.js-imgInput');
+const addbutton = document.querySelector ('.js-addbutton');
+
+const handleclick = (event)=> {
+  event.preventDefault()
+
+  const urlKittie= imgInput.value;
+  const nameKittie= nameInput.value;
+  const raceKittie= raceInput.value;
+  const descKittie= descInput.value;
+
+  list.innerHTML += ` <li class="card">
+            <img
+              class="card_img"
+              src="${urlKittie}"
+              alt="maine-coon-cat"
+            />
+            <h3 class="card_title">${nameKittie}</h3>
+            <h4 class="card_race">${raceKittie}</h4>
+            <p class="card_description">
+              ${descKittie}
+            </p>
+          </li>`;
+
+
+}
+
+addbutton.addEventListener('click', handleclick);
+
+
+
+
+
 
 
 
