@@ -1,7 +1,7 @@
 'use strict';
 const list = document.querySelector ('.js-list');
 
-const imgKitten1 = 'https://dev.adalab.es/gato-siames.webp';
+/*const imgKitten1 = 'https://dev.adalab.es/gato-siames.webp';
 const raceKitten1 = 'Siamés';
 const nameKitten1 = 'Anastasio';
 const descriptionKitten1 = 'Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.';
@@ -14,8 +14,50 @@ const descriptionKitten2 = 'Produce fascinación y curiosidad. Exótico, raro, b
 const raceKitten3 = 'Maine Coon';
 const imgKitten3 = 'https://dev.adalab.es/maine-coon-cat.webp';
 const nameKitten3 = 'Cielo';
-const descriptionKitten3 = 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.';
+const descriptionKitten3 = 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.';*/
 
+//Objetos de cada Kitten (datos)
+const kittenData_1 = {
+ name:'Anastasio',
+ race:'Siamés',
+ imagen:'https://dev.adalab.es/gato-siames.webp',
+ desc: 'Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.'
+};
+
+const kittenData_2 = {
+ name:'Fiona',
+ race:'Sphynx',
+ imagen:'https://dev.adalab.es/sphynx-gato.webp',
+ desc: 'Produce fascinación y curiosidad. Exótico, raro, bello, extraño...hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.'
+
+};
+
+const kittenData_3 = {
+ name:'Cielo',
+ race:'Maine Coon',
+ imagen:'https://dev.adalab.es/maine-coon-cat.webp',
+ desc: 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.'
+};
+
+//
+function renderKitten(kitten) {
+  return `<li class="card">
+            <article>
+              <img
+                class="card_img"
+                src="${kitten.imagen}"
+                alt="siames-cat"
+              />
+              <h3 class="card_title">${kitten.name}</h3>
+              <h4 class="card_race">${kitten.race}</h4>
+              <p class="card_description">
+                ${kitten.desc}
+              </p>
+            </article>
+          </li>`;
+  
+}
+/* 
 const kittenOne = `<li class="card">
             <article>
               <img
@@ -53,9 +95,8 @@ const kittenThree = ` <li class="card">
             <p class="card_description">
               ${descriptionKitten3}
             </p>
-          </li>`;
-list.innerHTML = kittenOne + kittenTwo + kittenThree
-
+          </li>`;*/
+list.innerHTML = renderKitten(kittenData_1) + renderKitten(kittenData_2) + renderKitten(kittenData_3);
 /*quitar la clase de collapsed de la section form*/
 const formSection = document.querySelector ('.js-new-form');
 //formSection.classList.remove('collapsed');
@@ -71,15 +112,18 @@ const buttonSearch = document.querySelector ('.js_button-search');
 
 const description = document.querySelector ('.js_in_search_desc');
 
-buttonSearch.addEventListener ('click', (event)=>{
+// Crear funcion Filterkitten
+
+function filterKitten (event){
 event.preventDefault();
 const descriptiontext = description.value;
 console.log (descriptiontext);
 
 // al colocar lis.innerHTML = '' estamos diciendo que limpie la pág despues de darle click para que solo aparezcan los gatos selccionados
 list.innerHTML = ''
+//Funcion de toLowerCase (convertir textos del usuario a minúscula);
 
-if (kittenOne.includes(descriptiontext)) {
+if (kittenOne.toLowerCase().includes(descriptiontext.toLowerCase())) {
   list.innerHTML = kittenOne
   //Completa el código
 }
@@ -95,7 +139,10 @@ if (kittenThree.includes(descriptiontext)) {
   //Completa el código
 }
 
-});
+};
+
+buttonSearch.addEventListener ('click',filterKitten)
+
 
 /*En tu fichero main.js crea las variables necesarias para almacenar la información de cada gatito (recuerda que tenemos tres gatitos de momento):
 
@@ -167,7 +214,7 @@ const handleclick = (event)=> {
             <img
               class="card_img"
               src="${urlKittie}"
-              alt="maine-coon-cat"
+              alt="común"
             />
             <h3 class="card_title">${nameKittie}</h3>
             <h4 class="card_race">${raceKittie}</h4>
@@ -180,6 +227,15 @@ const handleclick = (event)=> {
 }
 
 addbutton.addEventListener('click', handleclick);
+
+
+
+
+
+
+
+
+
 
 
 
