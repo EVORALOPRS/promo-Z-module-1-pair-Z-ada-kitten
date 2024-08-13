@@ -39,24 +39,9 @@ const kittenData_3 = {
  desc: 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.'
 };
 
-//
-function renderKitten(kitten) {
-  return `<li class="card">
-            <article>
-              <img
-                class="card_img"
-                src="${kitten.imagen}"
-                alt="siames-cat"
-              />
-              <h3 class="card_title">${kitten.name}</h3>
-              <h4 class="card_race">${kitten.race}</h4>
-              <p class="card_description">
-                ${kitten.desc}
-              </p>
-            </article>
-          </li>`;
-  
-}
+const kittenDataList = [kittenData_1,kittenData_2,kittenData_3]
+
+
 /* 
 const kittenOne = `<li class="card">
             <article>
@@ -96,7 +81,29 @@ const kittenThree = ` <li class="card">
               ${descriptionKitten3}
             </p>
           </li>`;*/
-list.innerHTML = renderKitten(kittenData_1) + renderKitten(kittenData_2) + renderKitten(kittenData_3);
+// Kitten es un objeto con toda la información del gato 
+function renderKitten(kitten) {
+  return `<li class="card">
+             <article>
+                <img
+                   class="card_img"
+                   src="${kitten.imagen}"
+                  alt="siames-cat"
+                  />
+              <h3 class="card_title">${kitten.name}</h3>
+              <h4 class="card_race">${kitten.race}</h4>
+              <p class="card_description">
+                          ${kitten.desc}
+              </p>
+              </article>
+              </li>`;
+            
+}
+          
+list.innerHTML = renderKitten(kittenDataList[0]) + renderKitten(kittenDataList[1]) + renderKitten(kittenDataList[2]);
+
+
+
 /*quitar la clase de collapsed de la section form*/
 const formSection = document.querySelector ('.js-new-form');
 //formSection.classList.remove('collapsed');
@@ -123,21 +130,22 @@ console.log (descriptiontext);
 list.innerHTML = ''
 //Funcion de toLowerCase (convertir textos del usuario a minúscula);
 
-if (kittenOne.toLowerCase().includes(descriptiontext.toLowerCase())) {
-  list.innerHTML = kittenOne
+if (kittenDataList[0].desc.toLowerCase().includes(descriptiontext.toLowerCase())) {
+  list.innerHTML = renderKitten(kittenDataList[0]);
   //Completa el código
+
 }
 // += es un acumulador si tenemos varios elementos en la lista.
 
-if (kittenTwo.includes(descriptiontext)) {
-  list.innerHTML += kittenTwo
+if (kittenDataList[1].desc.toLowerCase().includes(descriptiontext.toLowerCase())) {
+  list.innerHTML += renderKitten(kittenDataList[1]);
   //Completa el código
 }
 
-if (kittenThree.includes(descriptiontext)) {
-  list.innerHTML += kittenThree
-  //Completa el código
+if (kittenDataList[2].desc.toLowerCase().includes(descriptiontext.toLowerCase())) {
+  list.innerHTML += renderKitten(kittenDataList[2]);
 }
+  //Completa el códigolist
 
 };
 
@@ -205,23 +213,22 @@ const addbutton = document.querySelector ('.js-addbutton');
 const handleclick = (event)=> {
   event.preventDefault()
 
-  const urlKittie= imgInput.value;
-  const nameKittie= nameInput.value;
-  const raceKittie= raceInput.value;
-  const descKittie= descInput.value;
+  /*const urlKittie= 
+  const nameKittie= 
+  const raceKittie= 
+  const descKittie=*/
 
-  list.innerHTML += ` <li class="card">
-            <img
-              class="card_img"
-              src="${urlKittie}"
-              alt="común"
-            />
-            <h3 class="card_title">${nameKittie}</h3>
-            <h4 class="card_race">${raceKittie}</h4>
-            <p class="card_description">
-              ${descKittie}
-            </p>
-          </li>`;
+// devuelve una <li>
+// Objeto de los datos de la lista kitten
+  const kitten = {
+  name:nameInput.value,
+  race:raceInput.value,
+  imagen:imgInput.value,
+  desc: descInput.value
+ };
+
+ 
+  list.innerHTML += renderKitten(kitten) 
 
 
 }
@@ -230,23 +237,6 @@ addbutton.addEventListener('click', handleclick);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
 
 
