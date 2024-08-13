@@ -16,6 +16,12 @@ const imgKitten3 = 'https://dev.adalab.es/maine-coon-cat.webp';
 const nameKitten3 = 'Cielo';
 const descriptionKitten3 = 'Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.';
 
+
+
+
+
+
+
 const kittenOne = `<li class="card">
             <article>
               <img
